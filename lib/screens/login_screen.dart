@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'signup_screen.dart';
+import 'package:project_eroom/widgets/custom_text_field.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -14,7 +16,7 @@ class LoginScreen extends StatelessWidget {
 
               CircleAvatar(
                 radius: 45,
-                backgroundColor: Colors.grey.shade300,
+                backgroundColor: Color(0xFFFFA743),
                 child: const Icon(
                   Icons.person,
                   size: 50,
@@ -43,39 +45,29 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 40),
-
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: TextField(
-                  decoration: InputDecoration(
+              const SizedBox(height: 30),
+               Center(
+                child: SizedBox(
+                  width: 300,
+                  child: const CustomTextField(
                     hintText: '아이디',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(12),
-                      ),
-                    ),
                   ),
                 ),
               ),
 
-              const SizedBox(height:20),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
+              const SizedBox(height: 15),
+                
+              Center(
+                child: SizedBox(
+                  width: 300,
+                  child: const CustomTextField(
                     hintText: '비밀번호',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(12),
-                      ),
-                    ),
+                    obscureText: true,
                   ),
                 ),
               ),
 
-              const SizedBox(height:30),
+              const SizedBox(height: 35),
 
               SizedBox(
                 width: 300,
@@ -85,10 +77,10 @@ class LoginScreen extends StatelessWidget {
                     //
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.black,
+                    backgroundColor: const Color(0xFFFFA743),
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(13),
                     ),
                   ),
                   child: const Text(
@@ -101,9 +93,41 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
 
+              const SizedBox(height: 40),
 
-                  
-          
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      '계정찾기',
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                  ),
+
+                  const Text(
+                    '|',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SignupScreen(),
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      '가입하기',
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
