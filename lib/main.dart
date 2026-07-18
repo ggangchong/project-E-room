@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_eroom/screen/login_screen.dart';
+import 'package:project_eroom/screens/login_screen.dart';
 
 void main() {
   runApp(const ProjectEroomApp());
