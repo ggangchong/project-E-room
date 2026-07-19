@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'signup_screen.dart';
 import 'package:project_eroom/widgets/custom_text_field.dart';
+import 'package:project_eroom/screens/home_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -74,8 +75,14 @@ class LoginScreen extends StatelessWidget {
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {
-                    //
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const HomeScreen(),
+                      ),
+                    );
                   },
+
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFFFFA743),
                     foregroundColor: Colors.white,
